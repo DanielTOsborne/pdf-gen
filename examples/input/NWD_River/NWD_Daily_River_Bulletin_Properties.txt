@@ -1,0 +1,378 @@
+'''
+Author: Ryan Larsen
+Last Updated: 11-04-2019
+Description: Properties file for Division's Daily River Bulletin
+'''
+
+#
+# Date Properties
+#
+UseCurDate = True # Set to True to create bulletin based on current date. Set to False to use HistoricBulletinDate to create bulletin
+HistoricBulletinDate = '01Jan2018 2400' # If UseCurDate is set to False, use this date to specify a historic bulletin
+
+#
+# Font Properties
+#
+Color1  = BaseColor(238, 65, 53) # Red
+Color2  = BaseColor(170, 170, 170) # Gray
+Color3  = BaseColor(0, 0, 0) # Black
+Color4  = BaseColor(255, 255, 255) # White
+Color5  = BaseColor(109, 134, 120) # Dark Teal
+Color6  = BaseColor(194, 205, 196) # Teal
+Color7  = BaseColor(235, 235, 235) # Light Gray
+Color8  = BaseColor(174, 212, 119) # Green: Used for cell background
+Color9  = BaseColor(237, 233, 55) # Yellow: Used for cell background
+Color10 = BaseColor(238, 51, 36) # Red: Used for cell background
+Font1   = Font(FontFamily.TIMES_ROMAN, 11.5, Font.NORMAL, Color3) # Courier 12pt Black Font
+Font15  = Font(FontFamily.TIMES_ROMAN, 10, Font.NORMAL, Color3) # Courier 12pt Black Font
+Font2   = Font(FontFamily.TIMES_ROMAN, 11.5, Font.BOLD, Color3) # Courier 12pt Black Bold Font
+Font25  = Font(FontFamily.TIMES_ROMAN, 10, Font.BOLD, Color3) # Courier 12pt Black Bold Font
+Font3   = Font(FontFamily.TIMES_ROMAN, 9.5, Font.BOLD, Color3) # Courier 11pt White Bold Font
+Font4   = Font(FontFamily.TIMES_ROMAN, 8.5, Font.NORMAL, Color3) # Courier 9pt Black Font
+Font5   = Font(FontFamily.TIMES_ROMAN, 8.5, Font.BOLD, Color3) # Courier 9pt Black Bold Font
+Font6   = Font(FontFamily.TIMES_ROMAN, 6.5, Font.NORMAL, Color3) # Courier 9pt Black Font
+Font7   = Font(FontFamily.TIMES_ROMAN, 7, Font.BOLD, Color3) # Courier 9pt Black Bold Font
+Font8   = Font(FontFamily.TIMES_ROMAN, 7, Font.NORMAL, Color3) # Courier 9pt Black Bold Font
+Font9   = Font(FontFamily.TIMES_ROMAN, 6.5, Font.BOLD, Color3)
+#
+# Number of Table Columns
+#
+Table1Columns = 11
+FooterColumns = 2
+
+#
+# Bulletin Margins
+#
+TopMargin = 36
+RightMargin = -48
+BottomMargin = 36
+LeftMargin = -48
+
+#
+# Title Block Properties
+#
+# Seal and Logo
+UsaceLogo   = BulletinsDirectory + 'Seals_and_Symbols/USACE_Logo.png'
+Seal        = BulletinsDirectory + 'Seals_and_Symbols/NWD_Seal.png'
+
+# Title Lines
+TitleLine1  = 'Northwestern Division, Missouri River Basin Water Management'
+TitleLine2  = 'Daily River Bulletin'
+TitleLine3  = 'Project Data Date/Time: %s' # Project date and time will be substituted in the bulletin script
+TitleLine4  = 'Last Updated Date/Time: %s' # Current date and time will be substituted in the bulletin script
+
+#
+# Information Dictionaries
+#
+# Information associated with locations used in the bulletin. Information, such as Public Name, is added to the dictionary within the bulletin script.
+LocationDict =  {
+                     'CAFE'  :  {   'RiverMile' :   2252.8},
+                     'UL6E'  :  {   'RiverMile' :   2151.5},
+                     'RBMT'  :  {   'RiverMile' :   1921.6},
+                     'FTPK'  :  {   'RiverMile' :   1771.6},
+                     'WPMT'  :  {   'RiverMile' :   1701.4},
+                     'CLMT'  :  {   'RiverMile' :   1621.0},
+                     'GARR'  :  {   'RiverMile' :   1389.9},
+                     'WSN'   :  {   'RiverMile' :   1553.0},
+                     'BIS'   :  {   'RiverMile' :   1315.0},
+                     'OAHE'  :  {   'RiverMile' :   1072.3},
+                     'PIR'   :  {   'RiverMile' :   1067.0},
+                     'LFSD'  :  {   'RiverMile' :   1065.7},
+                     'FISD'  :  {   'RiverMile' :   1060.0},
+                     'BEND'  :  {   'RiverMile' :   987.4},
+                     'FTRA'  :  {   'RiverMile' :   880.0},
+                     'GWSD'  :  {   'RiverMile' :   865.0},
+                     'VENE'  :  {   'RiverMile' :   845.0},
+                     'NMNE'  :  {   'RiverMile' :   842.0},
+                     'SPSD'  :  {   'RiverMile' :   833.0},
+                     'GAPT'  :  {   'RiverMile' :   811.1},
+                     'YKN'   :  {   'RiverMile' :   806.0},
+                     'SUX'   :  {   'RiverMile' :   732.0},
+                     'DENE'  :  {   'RiverMile' :   691.0},
+                     'BLNE'  :  {   'RiverMile' :   648.0},
+                     'OMA'   :  {   'RiverMile' :   616.0},
+                     'PTNE'  :  {   'RiverMile' :   592.0},
+                     'NCNE'  :  {   'RiverMile' :   563.0},
+                     'BVNE'  :  {   'RiverMile' :   535.0},
+                     'RUNE'  :  {   'RiverMile' :   498.0},
+                     'STJ'   :  {   'RiverMile' :   448.0},
+                     'MKC'   :  {   'RiverMile' :   366.0},
+                     'NAPM'  :  {   'RiverMile' :   329.0},
+                     'WVMO'  :  {   'RiverMile' :   293.0},
+                     'GLMO'  :  {   'RiverMile' :   226.0},
+                     'BNMO'  :  {   'RiverMile' :   197.0},
+                     'JEFM'  :  {   'RiverMile' :   144.0},
+                     'HEMO'  :  {   'RiverMile' :   98.0},
+                     'STCH'  :  {   'RiverMile' :   28.0},
+                     'STL'   :  {   'RiverMile' :   1144.0},
+                     }
+
+# Table layout information
+TableLayoutDict =   {  # Title and Table column widths
+                        'TitleBlock'    :   {   'Column0'   :   2  },
+                        'Table1'        :   {   'Column0'   :   {   'Key'           :   'PublicName', 
+                                                                    'ColumnWidth'   :   40 },
+                                                'Column1'   :   {   'Key'           :   'RiverMile',
+                                                                    'ColumnWidth'   :   20,
+                                                                    'Format'        :   '%.1f'  },
+                                                'Column2'   :   {   'Key'           :   'ElevDatum',
+                                                                    'ColumnWidth'   :   12,
+                                                                    'Format'        :   '%.1f' },
+                                                'Column3'   :   {   'Key'           :   'FloodStage',
+                                                                    'ColumnWidth'   :   15,
+                                                                    'Format'        :   '%.1f' },
+                                                'Column4'   :   {   'Key'           :   'Elevation',
+                                                                    'ColumnWidth'   :   15,
+                                                                    'Format'        :   '%.1f' },
+                                                'Column5'   :   {   'Key'           :   'ElevChange',
+                                                                    'ColumnWidth'   :   13,
+                                                                    'Format'        :   '%.1f' },
+                                                'Column6'   :   {   1 : {   'Key'           :  'FlowIn',
+                                                                            'ColumnWidth'   :   19, 
+                                                                            'Format'        :   NumberFormat.getNumberInstance(Locale.US)},
+                                                                    2 : {   'Key'           :  'FlowTotal',
+                                                                            'ColumnWidth'   :   19,
+                                                                            'Format'        :   NumberFormat.getNumberInstance(Locale.US)},
+                                                                },
+                                                'Column7'   :   {   1 : {   'Key'           :  'Storage',
+                                                                            'ColumnWidth'   :   19,
+                                                                            'Format'        :   NumberFormat.getNumberInstance(Locale.US)},
+                                                                    2 : {   'Key'           :  'Energy',
+                                                                            'ColumnWidth'   :   19,
+                                                                            'Format'        :   NumberFormat.getNumberInstance(Locale.US)},
+                                                                },
+                                                'Column8'   :   {   'Key'           :   'Precip',
+                                                                    'ColumnWidth'   :   10,
+                                                                    'Format'        :   '%.2f'},
+                                                'Column9'   :   {   'Key'           :   'AirTempMax',
+                                                                    'ColumnWidth'   :   10,
+                                                                    'Format'        :   NumberFormat.getNumberInstance(Locale.US) },
+                                                'Column10'  :   {   'Key'           :   'AirTempMin',
+                                                                    'ColumnWidth'   :   10,
+                                                                    'Format'        :   NumberFormat.getNumberInstance(Locale.US) },
+                                                # Cell default properties:
+                                                'TextFont'              :   Font8,
+                                                'RowSpan'               :   1,
+                                                'ColSpan'               :   1,
+                                                'HorizontalAlignment'   :   Element.ALIGN_RIGHT,
+                                                'VerticalAlignment'     :   Element.ALIGN_CENTER,
+                                                'CellPadding'           :   [0, 2, 2, 2], # [Top, Right, Bottom, Left]
+                                                'BorderColors'          :   [Color2, Color2, Color2, Color2], # [Top, Right, Bottom, Left]
+                                                'BorderWidths'          :   [0.25, 0.25, 0.25, 0.25], # [Top, Right, Bottom, Left]
+                                                'VariableBorders'       :   True,
+                                                'BackgroundColor'       :   Color4 # White
+                                                }
+                        }
+                        
+
+# Information associated with the various data blocks in the tables of the bulletin
+DataBlockDict = {   
+                    # List of data block headings. Headings are used as keys for project lists
+                    'DataBlockHeadings' :   ['Missouri River Mainstem Projects as of Midnight', 'Selected Tributary reservoirs as of Midnight' ],
+                    # Information for the 
+                    'DataBlocks'        :   {   'Table1Data1'   :   {   'Heading'               :   'Missouri River Mainstem Projects as of Midnight',
+                                                                        'ProjectList'           :   ['FTPK', 'GARR', 'OAHE', 'BEND', 'FTRA', 'GAPT', 'SYS'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   ElevStorLinearStep,
+                                                                        'FloodStage'            :   None,
+                                                                        'Elevation'             :   ElevInstHourBestMrbwm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInAveDayBestMrbwm,
+                                                                        'Storage'               :   StorInstDayBestMrbwm,                                                                        
+                                                                        'Precip'                :   PrecipTotalDayBestMrbwm,
+                                                                        'AirTempMax'            :   TempMaxDayBestMrbwm,
+                                                                        'AirTempMin'            :   TempMinDayBestMrbwm,
+                                                                        'FlowTotal'             :   FlowOutAveDayBestMrbwm,
+                                                                        'Energy'                :   EnergyTotalDayBestMrbwm,                                                                        
+                                                                        },
+                                                'Table1Data2'   :   {   'Heading'               :   'Above Fort Peck Reach',
+                                                                        'ProjectList'           :   ['FLMT', 'UL6E', 'VAMT', 'VIMT', 'RBMT', 'MOMT'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                 'Table1Data3'   :   {   'Heading'               :   'Fort Peck to Garrison Reach',
+                                                                        'ProjectList'           :   ['NAMT', 'WPMT', 'CLMT', 'CSMT', 'LVMT', 'BIL', 'BHMT', 'MIMT', 'MLS', 'LOMT', 'SIMT', 'WSN', 'WCND'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data4'   :   {   'Heading'               :   'Garrison to Oahe Reach',
+                                                                        'ProjectList'           :   ['HAND', 'BIS', 'MAND', 'BRND', 'LESD', 'WHSD', 'CCSD'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data5'   :   {   'Heading'               :   'Oahe to Fort Randall Reach',
+                                                                        'ProjectList'           :   ['PIR', 'FPSD', 'LFSD', 'FISD', 'OCSD'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                 'Table1Data6'   :   {  'Heading'               :   'Fort Randall to Gavins Point Reach',
+                                                                        'ProjectList'           :   ['GWSD', 'VDNE', 'VENE', 'VRNE', 'NMNE', 'SPSD'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data7'   :   {   'Heading'               :   'Gavins Point to Sioux City Reach',
+                                                                        'ProjectList'           :   ['YKN', 'SCSD', 'SJNE', 'MANE', 'VRSD', 'PONE', 'NCSD', 'RVIA', 'AKIA', 'SUX'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data8'   :   {   'Heading'               :   'Sioux City to Omaha Reach',
+                                                                        'ProjectList'           :   ['ANIA', 'JMIA', 'DENE', 'MHIA', 'LVIA', 'CEIA', 'MPIA', 'TUIA', 'PSIA', 'BLNE', 'LGIA', 'OMA'],
+                                                                        'PublicName'            :   None,
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data9'   :   {   'Heading'               :   'Omaha to Nebraska City Reach',
+                                                                        'ProjectList'           :   ['KENE', 'GRNE', 'MLNE', 'NLNE', 'OFK', 'WSNE', 'UENE', 'WTNE', 'GWNE', 'LUNE', 'PTNE', 'UNNE', 'NCNE'],
+                                                                        'PublicName'            :   None, # Using 'PublicName' triggers the name retrieval in the script
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data10'   :   {   'Heading'               :   'Nebraska City to Rulo Reach',
+                                                                        'ProjectList'           :   ['BVNE', 'HCIA', 'RNIA', 'ACIA', 'ROIA', 'HAIA', 'AUNE', 'RUNE'],
+                                                                        'PublicName'            :   None, # Using 'PublicName' triggers the name retrieval in the script
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data11'   :   {  'Heading'               :   'Rulo to Kansas City Reach',
+                                                                        'ProjectList'           :   ['FLNE', 'GRAM', 'STJ', 'AGYM', 'SSMO', 'DESO', 'MKC'],
+                                                                        'PublicName'            :   None, # Using 'PublicName' triggers the name retrieval in the script
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                'Table1Data12'   :   {  'Heading'               :   'Kansas City to St. Louis Reach',
+                                                                        'ProjectList'           :   ['LCTM', 'WVMO', 'GLLM', 'TTNM', 'CHMO', 'SMNM', 'PRIM', 'GLMO', 'BLCM', 'BNMO', 'JEFM', 'BAGM', 'RIFM', 'HEMO', 'STL'],
+                                                                        'PublicName'            :   None, # Using 'PublicName' triggers the name retrieval in the script
+                                                                        'RiverMile'             :   None,
+                                                                        'ElevDatum'             :   None,
+                                                                        'FloodStage'            :   StageNwsInstFlood,
+                                                                        'Elevation'             :   StageInstHourBestNwdm,
+                                                                        'ElevChange'            :   None,
+                                                                        'FlowIn'                :   FlowInstHourBestNwdm,
+                                                                        'Precip'                :   PrecipTotalDayRevNwsAsos,
+                                                                        'AirTempMax'            :   TempMaxDayRevNwsAsos,
+                                                                        'AirTempMin'            :   TempMinDayRevNwsAsos,
+                                                                        'Energy'                :   None,
+                                                                        'Storage'               :   None,
+                                                                        'FlowTotal'             :   None,
+                                                                        },
+                                                }
+                        }
+
+#
+# Footer Properties
+#
+FooterImage = BulletinsDirectory + 'Seals_and_Symbols/USACE_Footer.png'
+
+#
+# Special Characters
+#
+Missing = 'M'
+Null    = '--'
+

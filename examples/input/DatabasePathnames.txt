@@ -1,0 +1,226 @@
+'''
+Author: Ryan Larsen
+Last Updated: 06-01-2020
+Description: List of generic time series for all MRBWM/NWO/NWK time series. Base locations can be substituted to retrieve specify time series data.
+General format of variable is Sub-LocationParameterTypeIntervalVersion.
+'''
+# -------------------------------------------------------------------
+# Missouri River Basin Water Management Time Series Containers
+# -------------------------------------------------------------------
+# Hourly Data
+EnergyInstHourBestMrbwm                     = '%s.Energy.Total.1Hour.0.Calc-val'
+ElevInstHourBestMrbwm                       = '%s.Elev.Inst.1Hour.0.Calc-val'
+TwElevInstHourBestMrbwm                     = '%s-Tailwater.Elev.Inst.1Hour.0.Calc-val'
+ElevHeadInstHourBestMrbwm                   = '%s.Elev-Head.Inst.1Hour.0.Calc-val'
+PowerhouseFlowInstHourBestMrbwm             = '%s-Powerhouse.Flow.Inst.1Hour.0.Calc-val'
+SpillwayFlowInstHourBestMrbwm               = '%s-Spillway.Flow.Inst.1Hour.0.Calc-val'
+TunnelFlowInstHourBestMrbwm                 = '%s-Tunnel.Flow.Inst.1Hour.0.Calc-val'
+FlowSpillInstHourBestMrbwm                  = '%s.Flow-Spill.Inst.1Hour.0.Calc-val'
+FlowOutInstHourBestMrbwm                    = '%s.Flow-Out.Inst.1Hour.0.Calc-val'
+TempInstHourBestMrbwm                       = '%s.Temp-Air.Inst.1Hour.0.Calc-val'
+SpeedWindInstHourBestMrbwm                  = '%s.Speed-Wind.Inst.1Hour.0.Calc-val'
+DirWindInstHourBestMrbwm                    = '%s.Dir-Wind.Inst.1Hour.0.Calc-val'
+PrecipInstHourBestMrbwm                     = '%s.Precip.Inst.1Hour.0.Calc-val'
+
+# 6-hr Data
+FlowOutInst6HourFcstMrbwmGrft               = '%s.Flow-Out.Inst.6Hours.0.Fcst-MRBWM-GRFT'
+FlowInst6HourFcstMrbwmGrft                  = '%s.Flow.Inst.6Hours.0.Fcst-MRBWM-GRFT'
+FlowLocalInst6HourFcstMrbwmGrft             = '%s.Flow-Local.Inst.6Hours.0.Fcst-MRBWM-GRFT'
+StageInst6HourFcstMrbwmGrft                 = '%s.Stage.Inst.6Hours.0.Fcst-MRBWM-GRFT'
+
+# Daily Data
+EnergyTotalDayBestMrbwm                     = '%s.Energy.Total.~1Day.1Day.Calc-val'
+EnergyMaxDayBestMrbwm                       = '%s.Energy.Max.~1Day.1Hour.Calc-val'
+EnergyMinDayBestMrbwm                       = '%s.Energy.Min.~1Day.1Hour.Calc-val'
+CodeHourMaxDayBestMrbwm                     = '%s.Code-Hour.Max.~1Day.1Hour.Calc-val'
+CodeHourMinDayBestMrbwm                     = '%s.Code-Hour.Min.~1Day.1Hour.Calc-val'
+EnergyMstTotalDayBestMrbwm                  = '%s.Energy-MST.Total.~1Day.1Day.Calc-val'
+ElevHeadAveHourBestMrbwm                    = '%s.Elev-Head.Ave.~1Day.1Day.Calc-val'
+ElevEstimatedInstDayBestMrbwm               = '%s.Elev-Estimated.Inst.~1Day.0.Calc-val'
+ElevOriginalInstDayBestMrbwm                = '%s.Elev-Estimated-Original.Inst.~1Day.0.Calc-val'
+FlowInAveDayBestMrbwm                       = '%s.Flow-In.Ave.~1Day.1Day.Calc-val'
+FlowEvapAveDayBestMrbwm                     = '%s.Flow-Evap.Ave.~1Day.1Day.Calc-val'
+PowerhouseFlowAveDayBestMrbwm               = '%s-Powerhouse.Flow.Ave.~1Day.1Day.Calc-val'
+SpillwayFlowAveDayBestMrbwm                 = '%s-Spillway.Flow.Ave.~1Day.1Day.Calc-val'
+TunnelFlowAveDayBestMrbwm                   = '%s-Tunnel.Flow.Ave.~1Day.1Day.Calc-val'
+DiversionFlowAveDayBestMrbwm                = '%s-Diversion.Flow.Ave.~1Day.1Day.Calc-val'
+FlowSpillAveDayBestMrbwm                    = '%s.Flow-Spill.Ave.~1Day.1Day.Calc-val'
+FlowOutAveDayBestMrbwm                      = '%s.Flow-Out.Ave.~1Day.1Day.Calc-val'
+FlowOutMaxDayBestMrbwm                      = '%s.Flow-Out.Max.~1Day.1Hour.Calc-val'
+StorInstDayBestMrbwm                        = '%s.Stor.Inst.~1Day.0.Calc-val'
+StorDiffTotalDayBestMrbwm                   = '%s.Stor-Difference.Total.~1Day.1Day.Calc-val'
+PrecipTotalDayBestMrbwm                     = '%s.Precip.Total.~1Day.1Day.Calc-val'
+TempMaxDayBestMrbwm                         = '%s.Temp-Air.Max.~1Day.1Hour.Calc-val'
+TempMinDayBestMrbwm                         = '%s.Temp-Air.Min.~1Day.1Hour.Calc-val'
+EvapRateTotalDayBestMrbwm                   = '%s.EvapRate.Total.~1Day.1Day.Calc-val'
+OutagesConstTotalDayRevMrbwm                = '%s.Code-Outages.Const.~1Day.0.Rev-MRBWM-Manual'
+FlowHoldoutMaxDayMrbwmHoldouts              = '%s.Flow-Holdout.Max.~1Day.1Hour.Calc-val-Holdouts'
+Flow1949MaxDayMrbwmHoldouts                 = '%s.Flow-1949Development.Max.~1Day.1Hour.Calc-val-Holdouts'
+Flow1949ReachMaxDayMrbwmHoldouts            = '%s.Flow-1949Development-Reach.Max.~1Day.1Hour.Calc-val-Holdouts'
+FlowUnregMaxDayMrbwmHoldouts                = '%s.Flow-Unregulated.Max.~1Day.1Hour.Calc-val-Holdouts'
+FlowRegMaxDayMrbwmHoldouts                  = '%s.Flow-Regulated.Max.~1Day.1Hour.Calc-val-Holdouts'
+StageUnregMaxDayMrbwmHoldouts               = '%s.Stage-Unregulated.Max.~1Day.1Hour.Calc-val-Holdouts'
+StageRegMaxDayMrbwmHoldouts                 = '%s.Stage-Regulated.Max.~1Day.1Hour.Calc-val-Holdouts'
+
+# Monthly Data
+Depl1949IncWithoutResTotal1MonthFcstUsbr    = '%s.Stor-1949IncDepl-WithoutReservoir.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949IncWithResLdTotal1MonthFcstUsbr     = '%s.Stor-1949IncDepl-WithReservoirLD.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949IncWithResLqTotal1MonthFcstUsbr     = '%s.Stor-1949IncDepl-WithReservoirLQ.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949IncWithResMTotal1MonthFcstUsbr      = '%s.Stor-1949IncDepl-WithReservoirM.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949IncWithResUqTotal1MonthFcstUsbr     = '%s.Stor-1949IncDepl-WithReservoirUQ.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949IncWithResUdTotal1MonthFcstUsbr     = '%s.Stor-1949IncDepl-WithReservoirUD.Total.~1Month.1Month.Fcst-USBR-Manual'
+DeplHistoricWithoutResTotal1MonthFcstUsbr   = '%s.Stor-HistoricDepl-WithoutReservoir.Total.~1Month.1Month.Fcst-USBR-Manual'
+Depl1949WithoutResTotal1MonthFcstUsbr       = '%s.Stor-1949Depl-WithoutReservoir.Total.~1Month.1Month.Fcst-USBR-Manual'
+Runoff1949Development1MonthFcstMrbwm        = '%s.Stor-Runoff-1949Development.Total.~1Month.1Month.Fcst-MRBWM-MonthlyRunoff'
+
+# USGS Measurements
+StageInstMeasurement                        = '%s.Stage.Inst.0.0.Rev-MRBWM-ManualUSGSMeasurement'
+FlowInstMeasurement                         = '%s.Flow.Inst.0.0.Rev-MRBWM-ManualUSGSMeasurement'
+
+# -------------------------------------------------------------------
+# Omaha District Time Series Containers
+# -------------------------------------------------------------------
+# 15-Min Data
+ElevRadarInst15minRawLrgs                   = '%s.Elev-radar.Inst.15Minutes.0.Raw-LRGS'
+VoltInst15minRawLrgs                        = '%s.Volt.Inst.15Minutes.0.Raw-LRGS'
+
+# Hourly Data
+ElevInstHourRawNwoCcp                       = '%s.Elev.Inst.1Hour.0.Raw-NWO-CCP'
+ElevInstHourBestNwo                         = '%s.Elev.Inst.1Hour.0.Best-NWO'
+ElevInstHourRawUsbr                         = '%s.Elev.Inst.1Hour.0.Raw-USBR'
+StageInstHourBestNwo                        = '%s.Stage.Inst.1Hour.0.Best-NWO'
+FlowInstHourRawCodwr                        = '%s.Flow.Inst.1Hour.0.Raw-CODWR'
+FlowInAve6HourBestNwo                       = '%s.Flow-In.Ave.1Hour.6Hours.Best-NWO'
+FlowOutAve6HourBestNwo                      = '%s.Flow-Out.Ave.1Hour.6Hours.Best-NWO'
+StorInstHourRawUsbr                         = '%s.Stor.Inst.1Hour.0.Raw-USBR'
+PrecipInstHourBestNwo                       = '%s.Precip.Inst.1Hour.0.Best-NWO'
+VoltInstHourRawLrgs                         = '%s.Volt.Inst.1Hour.0.Raw-LRGS'
+
+# Daily Data
+ElevInstDayRawUsbr                          = '%s.Elev.Inst.1Day.0.Raw-USBR'
+FlowOutAveDayRawUsbr                        = '%s.Flow-Out.Ave.1Day.1Day.Raw-USBR'
+FlowOutAveTildeDayBestNwo                   = '%s.Flow-Out.Ave.~1Day.1Day.Best-NWO'
+FlowInAveDayRawUsbr                         = '%s.Flow-In.Ave.1Day.1Day.Raw-USBR'
+FlowInAveTildeDayBestNwo                    = '%s.Flow-In.Ave.~1Day.1Day.Best-NWO'
+StorInstTildeDayBestNwo                     = '%s.Stor.Inst.~1Day.0.Best-NWO'
+StorInstTildeDayRawUsbr                     = '%s.Stor.Inst.~1Day.0.Raw-USBR'
+StorInstDayRawUsbr                          = '%s.Stor.Inst.1Day.0.Raw-USBR'
+PrecipTotalTildeDayBestNwo                  = '%s.Precip.Total.~1Day.1Day.Best-NWO'
+PrecipTotalDayRawUsbr                       = '%s.Precip.Total.1Day.1Day.Raw-USBR'
+ElevInstDay0168                             = '%s.Elev.Inst.1Day.0.Rev-NWO-0168'
+FlowInAveDay0168                            = '%s.Flow-In.Ave.1Day.1Day.Rev-NWO-0168'
+FlowOutAveDay0168                           = '%s.Flow-Out.Ave.1Day.1Day.Rev-NWO-0168'
+
+# -------------------------------------------------------------------
+# Kansas City District Time Series Containers
+# -------------------------------------------------------------------
+# Hourly Data
+ElevInstHourBestNwk                         = '%s.Elev.Inst.1Hour.0.Best-NWK'
+
+# 6-hr Data
+FlowInst6HourFcstNwkGrft                    = '%s.Flow-River.Inst.6Hours.0.FUIforecast-rev'
+FlowOutInst6HourFcstNwkKrft                 = '%s.Flow-Out.Inst.6Hours.0.Fcst-NWK-KRFT'
+FlowInst6HourFcstNwkKrft                    = '%s.Flow.Inst.6Hours.0.Fcst-NWK-KRFT'
+FlowLocalInst6HourFcstNwkKrft               = '%s.Flow-Local.Inst.6Hours.0.Fcst-NWK-KRFT'
+
+# Daily Data
+ElevInstDayBestNwk                          = '%s.Elev.Inst.1Day.0.Best-NWK'
+EnergyTotalDayBestNwk                       = '%s.Energy.Total.1Day.1Day.Best-NWK'
+StorInstDayBestNwk                          = '%s.Stor.Inst.1Day.0.Best-NWK'
+FlowEvapAveDayBestNwk                       = '%s.Flow-Evap.Ave.1Day.1Day.Best-NWK'
+FlowInAveDayBestNwk                         = '%s.Flow-In.Ave.1Day.1Day.Best-NWK'
+FlowOutAveDayBestNwk                        = '%s.Flow-Out.Ave.1Day.1Day.Best-NWK'
+PrecipTotalDayBestNwk                       = '%s.Precip.Total.1Day.1Day.Best-NWK'
+
+# -------------------------------------------------------------------
+# NWDM Office (shared time series between all 3 offices)
+# -------------------------------------------------------------------
+# 15-min Data
+StageInst15minRawLrgs                       = '%s.Stage.Inst.15Minutes.0.Raw-LRGS'
+
+# Hourly Data
+FlowInstHourBestNwdm                        = '%s.Flow.Inst.1Hour.0.Best-NWDM'
+StageInstHourBestNwdm                       = '%s.Stage.Inst.1Hour.0.Best-NWDM'
+StageInstHourRawNwdmCcp                     = '%s.Stage.Inst.1Hour.0.Raw-NWDM-CCP'
+PrecipInstHourBestNwdm                      = '%s.Precip.Inst.1Hour.0.Best-NWDM'
+SpeedWindInstHourRevAwc                     = '%s.Speed-Wind.Inst.1Hour.0.Rev-AWC'
+DirWindInstHourRevAwc                       = '%s.Dir-Wind.Inst.1Hour.0.Rev-AWC'
+
+# 6-hr Data
+StageInst6HourFcstMbrfcOffQpf               = '%s.Stage.Inst.6Hours.0.Fcst-MBRFC-Official'
+StageInst6HourFcstMbrfc0Qpf                 = '%s.Stage.Inst.6Hours.0.Fcst-MBRFC-0QPF'
+StageInst6HourFcstMbrfc24Qpf                = '%s.Stage.Inst.6Hours.0.Fcst-MBRFC-24QPF'
+StageInst6HourFcstMbrfc48Qpf                = '%s.Stage.Inst.6Hours.0.Fcst-MBRFC-48QPF'
+StageInst6HourFcstMbrfc120Qpf               = '%s.Stage.Inst.6Hours.0.Fcst-MBRFC-120QPF'
+
+# Daily Data
+PrecipTotalDayRevNwsAsos                    = '%s.Precip.Total.1Day.1Day.Rev-NWS-ASOS'
+TempMaxDayRevNwsAsos                        = '%s.Temp-Air.Max.1Day.1Hour.Rev-NWS-ASOS'
+TempMinDayRevNwsAsos                        = '%s.Temp-Air.Min.1Day.1Hour.Rev-NWS-ASOS'
+FlowOutAveDayFcstUsbr                       = '%s.Flow-Out.Ave.1Day.1Day.Fcst-USBR'
+
+# -------------------------------------------------------------------
+# Snowpack Time Series Containers
+# -------------------------------------------------------------------
+# Hourly Data
+
+# Daily Data
+DepthSweInstDayRevNrcs                      = '%s.Depth-SWE.Inst.1Day.0.Rev-NRCS-SNOTEL'
+DepthSweAve30yrRevNrcs                      = '%s.Depth-SWE.Ave.1Day.0.Rev-NRCS-SNOTEL;1981;2010'
+
+# -------------------------------------------------------------------
+# Upper Missouri River Monitoring Network Time Series Containers
+# -------------------------------------------------------------------
+# 5-min Data
+PrecipTotal5minRawMadis				        = '%s.Precip.Total.5Minutes.5Minutes.Raw-MADIS'
+TempAve5minRawMadis				        	= '%s.Temp-Air.Ave.5Minutes.5Minutes.Raw-MADIS'
+RelativeHumidityAve5minRawMadis	        	= '%s.%%-RelativeHumidity.Ave.5Minutes.5Minutes.Raw-MADIS'
+DirWindAve5minRawMadis	        			= '%s.Dir-Wind.Ave.5Minutes.5Minutes.Raw-MADIS'
+SpeedWindAve5minRawMadis	        		= '%s.Speed-Wind.Ave.5Minutes.5Minutes.Raw-MADIS'
+IrradAve5minRawMadis	        			= '%s.Irrad.Total.5Minutes.5Minutes.Raw-MADIS'
+
+# Hourly Data
+SoilMoistureInstHourRawMadis				= '%s-D%02din.%%-SoilMoisture.Inst.1Hour.0.Raw-MADIS'
+SoilTempInstHourRawMadis				    = '%s-D%02din.Temp-Soil.Inst.1Hour.0.Raw-MADIS'
+DepthSnowInstHourRawMadis				    = '%s.Depth-Snow.Inst.1Hour.0.Raw-MADIS'
+
+# -------------------------------------------------------------------
+# Location Levels. Only elevation data is included. Storage values are rated from elevation
+# -------------------------------------------------------------------
+# Reservoir Zones
+TopOfExclZone                               = '%s.Elev.Inst.0.Top of Exclusive Flood Control'
+TopOfMultiZone                              = '%s.Elev.Inst.0.Top of Multipurpose'
+TopOfReplZone                               = '%s.Elev.Inst.0.Top of Replacement'
+TopOfFloodZone                              = '%s.Elev.Inst.0.Top of Flood'
+TopOfFloodCtrZone                           = '%s.Elev.Inst.0.Top of Flood Control'
+TopOfJointZone                              = '%s.Elev.Inst.0.Top of Joint Use'
+TopOfConsZone                               = '%s.Elev.Inst.0.Top of Conservation'
+TopOfConsStorZone                           = '%s.Stor.Inst.0.Top of Conservation' # BUBI does not have a rating curve. 
+TopOfInactZone                              = '%s.Elev.Inst.0.Top of Inactive'
+ImperviousBlanket                           = '%s.Elev.Inst.0.Impervious Blanket'
+ConduitFilter                               = '%s.Elev.Inst.0.Conduit Filter'
+
+# Reservoir Levels
+ElevMaxOfRecord                             = '%s.Elev.Inst.0.Max of Record'
+FlowInMaxOfRecord                           = '%s.Flow-In.Inst.0.Max of Record'
+FlowTotalMaxOfRecord                        = '%s.Flow-Total.Inst.0.Max of Record'
+
+# Stream Gage Levels
+StageMaxOfRecord                            = '%s.Stage.Inst.0.Max of Record'
+StageNwsAction                              = '%s.Stage.Inst.0.NWS Action Stage'
+StageNwsFlood                               = '%s.Stage.Inst.0.NWS Flood Stage'
+StageNwsModFlood                            = '%s.Stage.Inst.0.NWS Moderate Flood Stage'
+StageNwsMajFlood                            = '%s.Stage.Inst.0.NWS Major Flood Stage'
+StageNwsInstFlood                           = '%s.Stage.Inst.0.Flood'
+
+# -------------------------------------------------------------------
+# Rating Curves
+# -------------------------------------------------------------------
+ElevStorLinearStep                          = '%s.Elev;Stor.Linear.Step'
+ElevAreaLinearStep                          = '%s.Elev;Area.Linear.Step'
+ElevStorStorageCurvesProduction             = '%s.Elev;Stor.Storage_Curves.Production'
+ElevEstStorUsgsExsaProduction               = '%s.Elev-Estimated;Stor.USGS-EXSA.Production'
+ElevEstAreaUsgsExsaProduction               = '%s.Elev-Estimated;Area.USGS-EXSA.Production'
+StageFlowLinearLinear                       = '%s.Stage;Flow.Linear.Linear'
+StageFlowLinearStep                         = '%s.Stage;Flow.Linear.Step'
+StageFlowUsgsExsaProduction                 = '%s.Rating.Stage;Flow.USGS-EXSA.Production'

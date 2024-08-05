@@ -1,0 +1,58 @@
+import java.lang
+import os, sys, inspect, datetime, RADARAPI, DBAPI
+import java.util
+import java.text
+
+OFFICE_ID = 'SPK'
+#CDA_URL = 'https://cwms-data.usace.army.mil:443/cwms-data'
+CDA_URL = 'https://wm.spk.ds.usace.army.mil:8243/spk-data'
+
+CurDateTime = datetime.datetime.now()
+CurDateTimeStr  = CurDateTime.strftime('%m-%d-%Y %H:%M') # Last updated time for bulletin formatted as mm-dd-yyyy hhmm
+ArchiveDateTimeStr  = CurDateTime.strftime('%d%m%Y') # Last updated time for bulletin formatted as dd-mm-yyyy
+Date = datetime.datetime.now() # Current date
+
+StartTw             = Date - datetime.timedelta(2)
+StartTwStr          = StartTw.strftime('%d%b%Y 2400') 
+EndTw               = Date - datetime.timedelta(1)
+EndTribTwStr        = Date
+EndTwStr            = EndTribTwStr.strftime('%d%b%Y 2400')
+
+print Date
+date = java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(Date.strftime('%Y-%m-%dT%H:%M:%S'))
+print date
+sys.exit(0)
+
+# DBAPI version
+CwmsDb = DBAPI.open()
+CwmsDb.setTimeZone('UTC')
+CwmsDb.setTimeWindow(StartTwStr, EndTwStr)
+CwmsDb.setOfficeId(OFFICE_ID)
+CwmsDb.setTrimMissing(False)
+
+db_start = datetime.datetime.now()
+# Get list of pathnames in database
+DbPathnameList = CwmsDb.getPathnameList()
+db_end = datetime.datetime.now()
+CwmsDb.done()
+print "TEST -- DBAPI catalog entries: %d" % len(DbPathnameList)
+
+# CDA version
+CwmsDb = RADARAPI.open(url=CDA_URL)
+CwmsDb.setTimeZone('UTC')
+CwmsDb.setTimeWindow(StartTwStr, EndTwStr)
+CwmsDb.setOfficeId(OFFICE_ID)
+CwmsDb.setTrimMissing(False)
+
+cda_start = datetime.datetime.now()
+# Get list of pathnames in database
+DbPathnameList = CwmsDb.getPathnameList()
+cda_end = datetime.datetime.now()
+CwmsDb.done()
+print "TEST -- RADAR catalog entries: %d" % len(DbPathnameList)
+
+# Print results
+print "TEST -- DBAPI catalog time: %d s" % (db_end - db_start).total_seconds()
+print "TEST -- RADAR catalog time: %d s" % (cda_end - cda_start).total_seconds()
+
+sys.exit(0)
