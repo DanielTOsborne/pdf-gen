@@ -1,0 +1,81 @@
+# Auto-detect text files, commit as LF, checkout as LF (unless explicitly specified below)
+# Useful for sharing the repository between Windows and cygwin
+# All files (including files with no extension, such as shell scripts)
+*                    text=auto eol=lf
+# All files with an extension will be handled natively
+*.*                  !eol
+
+# Override line endings for specific file types
+# Linux shell scripts should always be LF
+*.sh                 text eol=lf diff=bash
+*.?sh                text eol=lf
+*.script             text eol=lf
+# Python scripts use #! line, which shell need to interpret
+*.py                 text eol=lf diff=python
+*.pyw                text eol=lf diff=python
+# Jython scripts (might also use .py)
+*.jy                 text eol=lf diff=python
+# Same for Perl
+*.pl                 text eol=lf diff=perl
+
+# Gradle/maven wrapper
+gradlew              text eol=lf
+mvnw                 text eol=lf
+
+# Windows scripts (if any) should always be CRLF
+*.[cC][mM][dD]       text eol=crlf
+*.[bB][aA][tT]       text eol=crlf
+*.[pP][sS]1          text eol=crlf
+*.[pP][sS][mM]1      text eol=crlf
+
+# Visual Studio
+*.sln                text eol=crlf
+*.csproj             text eol=crlf
+*.v[cb]proj          text eol=crlf
+*.[iI][nN][iI]       text eol=crlf
+*.[rR][eE][gG]       text eol=crlf working-tree-encoding=UTF-16LE-BOM
+
+# Files that aren't particular
+*.c                  text diff=cpp
+*.cpp                text diff=cpp
+*.cs                 text diff=csharp
+*.css                text diff=css
+*.erb                text
+*.gradle             text
+*.h                  text diff=cpp
+*.htm                text diff=html
+*.html               text diff=html
+*.java               text diff=java
+*.jsp                text
+*.jspx               text
+*.md                 text diff=markdown
+*.php                text diff=php
+*.pm                 text diff=perl
+*.rb                 text diff=ruby
+*.ru                 text diff=ruby
+*.txt                text
+*.xhtml              text diff=html
+*.xml                text
+*.xsd                text
+*.xsl                text
+
+Gemfile              text
+
+# Don't touch images
+*.[iI][cC][oO]       binary
+*.[gG][iI][fF]       binary
+*.[pP][nN][gG]       binary
+*.[jJ][pP][gG]       binary
+*.[jJ][pP][eE][gG]   binary
+
+# Except SVG
+*.svg                text
+
+# Ansible is always deployed from a unix env (Cygwin)
+*.yml                text eol=lf
+
+# Hash files, treat as binary so nothing alters the contents
+*.MD5                binary
+*.SHA1               binary
+*.SHA[235][581][642] binary
+

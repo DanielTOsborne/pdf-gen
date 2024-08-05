@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+$dir/runjava.sh org.python.util.jython "$@"

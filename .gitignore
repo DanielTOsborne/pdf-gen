@@ -1,0 +1,25 @@
+**.old
+**.new
+**~
+**.swp
+**.swn
+**.tmp
+**.bak
+**.bak?
+**.bak.*
+**.out
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Ignore VSCode data
+.vscode
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
