@@ -17,10 +17,11 @@ Jython:
 jpype:
 `docker run -it itext jpype /input/<inputscript.py>`
 
-An example has been included, and can be run by placing the `input` folder into the root of the project before building the container.
+An example has been included, and can be run by placing the `input` folder into the root of the project before building the container. Alternatively mount it as a volume in the container when running it.
 Once built, run the report with:
 
 `docker run -it itext /input/NWD_River/NWD_Daily_River_Bulletin.py`
 
 To see the output, copy it out of the container:
+
 `docker cp $(docker container ls -q):/output/NWD_Daily_River_Bulletin.pdf .`
