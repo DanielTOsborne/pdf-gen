@@ -9,6 +9,7 @@ RUN dnf install -y --nodocs java-11-openjdk-headless && \
 	rm -rf /var/cache/dnf
 ADD . /tmp
 WORKDIR /tmp
+RUN /tmp/add-dod-certs.sh
 RUN --mount=type=cache,target=/root/.gradle ./gradlew --no-daemon installDist
 
 FROM $BASE_IMAGE
@@ -17,6 +18,9 @@ RUN dnf install -y --nodocs java-11-openjdk-headless && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
 RUN pip install jpype1 awscli
+
+COPY --from=build /etc/pki/ca-trust/source/anchors/* /etc/pki/ca-trust/source/anchors/
+RUN /usr/bin/update-ca-trust
 
 COPY --from=build /tmp/build/install /opt/
 ADD --chmod=775 example.py /input/

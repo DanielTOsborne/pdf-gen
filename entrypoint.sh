@@ -1,4 +1,5 @@
 #!/bin/sh
+export REQUESTS_CA_BUNDLE="/etc/ssl/certs/ca-bundle.trust.crt"
 
 # Fix permissions of volumes
 if [ "${FIX_PERMISSIONS:-0}" -gt 0 ]; then
