@@ -3,7 +3,6 @@ ARG BASE_IMAGE=registry.access.redhat.com/ubi9/python-311:1-52
 FROM $BASE_IMAGE as build
 USER root
 
-#RUN dnf install -y --nodocs java-1.8.0-openjdk-headless && \
 RUN dnf install -y --nodocs java-11-openjdk-headless && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
@@ -14,10 +13,10 @@ RUN --mount=type=cache,target=/root/.gradle ./gradlew --no-daemon installDist
 
 FROM $BASE_IMAGE
 USER root
-RUN dnf install -y --nodocs java-11-openjdk-headless && \
+RUN dnf install -y --nodocs java-11-openjdk-headless dejavu-serif-fonts dejavu-sans-mono-fonts && \
 	dnf clean all && \
 	rm -rf /var/cache/dnf
-RUN pip install jpype1 awscli
+RUN pip install cwms-python jpype1 awscli
 
 COPY --from=build /etc/pki/ca-trust/source/anchors/* /etc/pki/ca-trust/source/anchors/
 RUN /usr/bin/update-ca-trust
@@ -40,7 +39,7 @@ ENV UID=1000
 ENV GID=1000
 ENV OFFICE_ID=
 ENV TZ=UTC
-ENV CDA_URL=cwms-data.usace.army.mil:443/cwms-data
+ENV CDA_URL=https://cwms-data.usace.army.mil:443/cwms-data
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV JAVA_XMS=256m
@@ -56,6 +55,8 @@ VOLUME /data
 VOLUME /output
 
 USER $UID:$GID
+
+WORKDIR /input
 
 LABEL org.opencontainers.image.authors="Daniel.T.Osborne@usace.army.mil"
 

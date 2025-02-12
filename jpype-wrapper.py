@@ -44,7 +44,9 @@ if __name__ == '__main__':
             report_file = sys.argv[1]
             # Compile the report, so source and line number information can be reported to the user
             execfile(report_file, globals())
-
+    except jpype.JException as ex:
+        print(repr(ex))
+        ex.stacktrace()
     finally:
         # Report execution as finished, shut down the JVM
         if jpype.isJVMStarted():
